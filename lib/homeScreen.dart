@@ -31,7 +31,7 @@ class _HomeScreenState extends State<HomeScreen> {
       appBar: AppBar(
         centerTitle: true,
         title: const Text(
-          'Tech Nest',
+          'MightyGizmos',
           style: TextStyle(
               color: Colors.white,
               fontSize: 23,
@@ -63,7 +63,7 @@ class _HomeScreenState extends State<HomeScreen> {
         child: BottomNavigationBar(
           items: const <BottomNavigationBarItem>[
             BottomNavigationBarItem(
-              icon: Icon(Icons.home),
+              icon: Icon(Icons.home_outlined),
               label: 'Home',
             ),
             BottomNavigationBarItem(
@@ -75,14 +75,14 @@ class _HomeScreenState extends State<HomeScreen> {
               label: 'School',
             ),
             BottomNavigationBarItem(
-              icon: Icon(Icons.settings),
-              label: 'Settings',
+              icon: Icon(Icons.person_outline),
+              label: 'Profile',
             ),
           ],
           currentIndex: _selectedIndex,
           onTap: _onItemTapped,
           unselectedItemColor: Colors.grey.withOpacity(0.5), // ไอคอนโปร่งแสงเมื่อยังไม่ได้เลือก
-          selectedItemColor: const Color(0xff6981ff), // สีดำเมื่อเลือกแท็บ
+          selectedItemColor: const Color.fromRGBO(19, 64, 116, 1.0), // สีดำเมื่อเลือกแท็บ
         ),
       ),
     );

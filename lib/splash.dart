@@ -62,7 +62,12 @@ class SplashScreenState extends State<SplashScreen> {
               ),
               const SizedBox(height: 20),
               const Text(
-                'Tech Nest',               
+                'MightyGizmos',    
+                style: TextStyle(
+                  fontSize: 24,
+                  fontWeight: FontWeight.bold,
+                  color: Colors.white,
+                ),           
                 
               ),
             ],
