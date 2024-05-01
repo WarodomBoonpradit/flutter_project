@@ -61,8 +61,8 @@ class SplashScreenState extends State<SplashScreen> {
                 ],
               ),
               const SizedBox(height: 20),
-              Text(
-                '6404232\nWarodom',               
+              const Text(
+                'Tech Nest',               
                 
               ),
             ],

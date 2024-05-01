@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/cupertino.dart';
+
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({Key? key}) : super(key: key);
@@ -25,18 +27,18 @@ class _HomeScreenState extends State<HomeScreen> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
+    return Scaffold(      
       appBar: AppBar(
         centerTitle: true,
         title: const Text(
-          'Tech Space',
+          'Tech Nest',
           style: TextStyle(
-            color: Colors.white,
-            fontSize: 22,
-            fontWeight: FontWeight.bold,
+              color: Colors.white,
+              fontSize: 23,
+              fontWeight: FontWeight.w500,
           ),
         ),
-        backgroundColor: const Color(0xff6981ff),
+        backgroundColor: const Color.fromRGBO(19, 64, 116, 1.0),
         leading: IconButton(
           icon: const Icon(Icons.menu, color: Colors.white),
           onPressed: () {
@@ -49,7 +51,7 @@ class _HomeScreenState extends State<HomeScreen> {
         children: _widgetOptions,
       ),
       bottomNavigationBar: Container(
-        decoration: BoxDecoration(
+        decoration: const BoxDecoration(
           color: Colors.white, // พื้นหลังสีขาว
           border: Border(
             top: BorderSide(
