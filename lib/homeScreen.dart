@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter_project/components/home.dart';
 import 'package:flutter_project/components/profile.dart';
-
+import 'package:flutter_project/components/cart.dart';
+import 'package:flutter_project/components/fav.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({Key? key}) : super(key: key);
@@ -16,8 +16,8 @@ class _HomeScreenState extends State<HomeScreen> {
 
   final List<Widget> _widgetOptions = <Widget>[
     const Home(),
-    BusinessTab(),
-    SchoolTab(),
+    Fav(),
+    const Cart(),
     const Profile(),
   ];
 
@@ -33,7 +33,7 @@ class _HomeScreenState extends State<HomeScreen> {
       appBar: AppBar(
         centerTitle: true,
         title: const Text(
-          'MightyGizmos',
+          'MIGHTYGIZMOS',
           style: TextStyle(
               color: Colors.white,
               fontSize: 23,
@@ -54,11 +54,11 @@ class _HomeScreenState extends State<HomeScreen> {
       ),
       bottomNavigationBar: Container(
         decoration: const BoxDecoration(
-          color: Colors.white, // พื้นหลังสีขาว
+          color: Colors.white,
           border: Border(
             top: BorderSide(
-              color: Colors.black, // สีเส้นขอบด้านบน
-              width:  0.25, // ความหนาของเส้นขอบ
+              color: Colors.black,
+              width:  0.25,
             ),
           ),
         ),
@@ -69,12 +69,12 @@ class _HomeScreenState extends State<HomeScreen> {
               label: 'Home',
             ),
             BottomNavigationBarItem(
-              icon: Icon(Icons.business),
-              label: 'Business',
+              icon: Icon(Icons.favorite_outline),
+              label: 'Favorite',
             ),
             BottomNavigationBarItem(
-              icon: Icon(Icons.school),
-              label: 'School',
+              icon: Icon(Icons.shopping_cart_outlined),
+              label: 'Cart',
             ),
             BottomNavigationBarItem(
               icon: Icon(Icons.person_outline),
@@ -83,35 +83,9 @@ class _HomeScreenState extends State<HomeScreen> {
           ],
           currentIndex: _selectedIndex,
           onTap: _onItemTapped,
-          unselectedItemColor: Colors.grey.withOpacity(0.5), // ไอคอนโปร่งแสงเมื่อยังไม่ได้เลือก
-          selectedItemColor: const Color.fromRGBO(19, 64, 116, 1.0), // สีดำเมื่อเลือกแท็บ
+          unselectedItemColor: Colors.grey.withOpacity(0.5), 
+          selectedItemColor: const Color.fromRGBO(19, 64, 116, 1.0),
         ),
-      ),
-    );
-  }
-}
-
-
-
-class BusinessTab extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return const Center(
-      child: Text(
-        'Index 1: Business',
-        style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold),
-      ),
-    );
-  }
-}
-
-class SchoolTab extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return const Center(
-      child: Text(
-        'Index 2: School',
-        style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold),
       ),
     );
   }
