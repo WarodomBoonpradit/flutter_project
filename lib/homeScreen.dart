@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
+import 'package:flutter_project/components/home.dart';
+import 'package:flutter_project/components/profile.dart';
 
 
 class HomeScreen extends StatefulWidget {
@@ -13,10 +15,10 @@ class _HomeScreenState extends State<HomeScreen> {
   int _selectedIndex = 0;
 
   final List<Widget> _widgetOptions = <Widget>[
-    HomeTab(),
+    const Home(),
     BusinessTab(),
     SchoolTab(),
-    SettingsTab(),
+    const Profile(),
   ];
 
   void _onItemTapped(int index) {
@@ -89,17 +91,7 @@ class _HomeScreenState extends State<HomeScreen> {
   }
 }
 
-class HomeTab extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return const Center(
-      child: Text(
-        'Index 0: Home',
-        style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold),
-      ),
-    );
-  }
-}
+
 
 class BusinessTab extends StatelessWidget {
   @override
@@ -119,18 +111,6 @@ class SchoolTab extends StatelessWidget {
     return const Center(
       child: Text(
         'Index 2: School',
-        style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold),
-      ),
-    );
-  }
-}
-
-class SettingsTab extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return const Center(
-      child: Text(
-        'Index 3: Settings',
         style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold),
       ),
     );

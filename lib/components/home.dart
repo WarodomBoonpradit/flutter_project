@@ -1,0 +1,15 @@
+import 'package:flutter/material.dart';
+
+class Home extends StatelessWidget {
+  const Home({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return const Center(
+      child: Text(
+        'Index 0: Home testing',
+        style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold),
+      ),
+    );
+  }
+}
