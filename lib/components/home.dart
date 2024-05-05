@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_project/components/detailPage/gamingPage.dart'; 
-import 'package:flutter_project/components/detailPage/headphondPage.dart';
+import 'package:flutter_project/components/page/mousePage.dart'; 
+import 'package:flutter_project/components/page/headphondPage.dart';
 
 class Home extends StatelessWidget {
   const Home({Key? key}) : super(key: key);
@@ -9,20 +9,18 @@ class Home extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        centerTitle: true,
-        // ใส่รูปภาพใน title ของ AppBar
+        centerTitle: true,        
         title: Image.network(
           'https://cdn.discordapp.com/attachments/1215338957923942431/1236622795002220664/logo.png?ex=6638ae39&is=66375cb9&hm=8c6bb5e6a724cb6da4a93d4a9ee798f8147158129612f573b5341c416df97974&', // URL ของรูปภาพที่คุณต้องการ
-          height: 50, // กำหนดความสูงของรูปภาพ
-          fit: BoxFit.cover, // กำหนดการจัดการรูปภาพ
+          height: 50, 
+          fit: BoxFit.cover, 
         ),
       ),
       
       body: Padding(
         padding: const EdgeInsets.all(8.0),
         child: Column(
-          children: [
-            // Row สำหรับจัดเรียงปุ่มจากซ้ายไปขวา
+          children: [            
             Row(
               mainAxisAlignment: MainAxisAlignment.start,
               children: [
