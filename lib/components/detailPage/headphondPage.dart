@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 
-class gamingPage extends StatelessWidget {
+class HeadphondPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Gaming Page'),
+        title: Text('Headphond Page'),
       ),
     );
   }

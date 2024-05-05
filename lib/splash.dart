@@ -32,9 +32,9 @@ class SplashScreenState extends State<SplashScreen> {
             children: [              
               ClipOval(
                 child: Image.network(
-                  'https://cdn.discordapp.com/attachments/1215338957923942431/1236346595243462797/logo.png?ex=6637acfe&is=66365b7e&hm=b0a931e86a891713dbdb51aeed066c2e3877ed9189eaa2a7ff4fe0659e928817&', // URL ของรูปภาพที่คุณต้องการ
-                  width: 200,
-                  height: 200,
+                  'https://cdn.discordapp.com/attachments/1215338957923942431/1236622795002220664/logo.png?ex=6638ae39&is=66375cb9&hm=8c6bb5e6a724cb6da4a93d4a9ee798f8147158129612f573b5341c416df97974&',
+                  width: 220,
+                  height: 220,
                   fit: BoxFit.cover,
                 ),
               ),
