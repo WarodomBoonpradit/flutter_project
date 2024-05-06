@@ -1,67 +1,167 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_project/components/page/mousePage.dart'; 
-import 'package:flutter_project/components/page/headphondPage.dart';
+import 'package:carousel_slider/carousel_slider.dart';
+import 'package:flutter_project/components/page/mousePage.dart';
+import 'package:flutter_project/components/page/keyboardPage.dart';
+import 'package:flutter_project/components/page/headphonePage.dart';
+import 'package:flutter_project/components/page/homePage.dart';
 
-class Home extends StatelessWidget {
+class Home extends StatefulWidget {
   const Home({Key? key}) : super(key: key);
 
   @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        centerTitle: true,        
-        title: Image.network(
-          'https://cdn.discordapp.com/attachments/1215338957923942431/1236622795002220664/logo.png?ex=6638ae39&is=66375cb9&hm=8c6bb5e6a724cb6da4a93d4a9ee798f8147158129612f573b5341c416df97974&', // URL ของรูปภาพที่คุณต้องการ
-          height: 50, 
-          fit: BoxFit.cover, 
+  _HomeState createState() => _HomeState();
+}
+
+class _HomeState extends State<Home> {
+  Widget _currentBody = homePage();
+
+  void _setBody(Widget newBody) {
+    setState(() {
+      _currentBody = newBody;
+    });
+  }
+
+  Widget _buildImageWithStyle(String imageUrl) {
+    return Container(
+      decoration: BoxDecoration(
+        borderRadius: BorderRadius.circular(10),
+      ),
+      child: ClipRRect(
+        borderRadius: BorderRadius.circular(10),
+        child: Image.network(
+          imageUrl,
+          fit: BoxFit.cover,
+          width: double.infinity,
         ),
       ),
-      
-      body: Padding(
-        padding: const EdgeInsets.all(8.0),
-        child: Column(
-          children: [            
-            Row(
-              mainAxisAlignment: MainAxisAlignment.start,
-              children: [
-                // ปุ่มสำหรับเลือกหมวดหมู่ที่ 1
-                ElevatedButton(
-                  onPressed: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(builder: (context) => gamingPage()),
-                    );
-                  },
-                  child: const Text('Category 1'),
+    );
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    final buttonStyle = ElevatedButton.styleFrom(
+      minimumSize: const Size(50, 50),
+      backgroundColor: const Color.fromRGBO(250, 250, 255, 1.0),
+      shape: const CircleBorder(),
+    );
+
+    return Scaffold(
+      appBar: AppBar(
+        centerTitle: true,
+        backgroundColor: const Color.fromRGBO(19, 49, 92, 1.0),
+        toolbarHeight: 310,
+        bottom: PreferredSize(
+          preferredSize: const Size.fromHeight(1.0),
+          child: Container(
+            height: 1,
+            width: 1,
+            color: Colors.grey, 
+          ),
+        ),
+        flexibleSpace: Column(
+          children: [
+            Padding(
+              padding: const EdgeInsets.only(top: 20.0),
+              child: CarouselSlider(
+                items: [
+                  _buildImageWithStyle(
+                    'https://cdn.discordapp.com/attachments/1215338957923942431/1236622795002220664/logo.png?ex=6639ffb9&is=6638ae39&hm=140b50c521726d9105cefb807cbd40b8e6cc1f35f1f8b16424d67b6350fea551&',
+                  ),
+                  _buildImageWithStyle(
+                    'https://cdn.discordapp.com/attachments/1215338957923942431/1236346595243462797/logo.png?ex=6639a73e&is=663855be&hm=55500d7d689c13766fb0d1e70af1bdadb81946c58c0d2f674a017643034705ba&',
+                  ),
+                ],
+                options: CarouselOptions(
+                  height: 200,
+                  autoPlay: true,
+                  aspectRatio: 16 / 9,
+                  enlargeCenterPage: true,
                 ),
-                const SizedBox(width: 10), // เพิ่มระยะห่างระหว่างปุ่ม
-                // ปุ่มสำหรับเลือกหมวดหมู่ที่ 2
-                ElevatedButton(
-                  onPressed: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(builder: (context) => HeadphondPage()),
-                    );
-                  },
-                  child: const Text('Category 2'),
-                ),
-                const SizedBox(width: 10), // เพิ่มระยะห่างระหว่างปุ่ม
-                // ปุ่มสำหรับเลือกหมวดหมู่ที่ 3
-                
-              ],
+              ),
             ),
-            // เนื้อหาหลักของหน้า (หากมี)
-            const Expanded(
-              child: Center(
-                child: Text(
-                  'Index 0: Home Testing',
-                  style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold),
-                ),
+            Padding(
+              padding: const EdgeInsets.only(top: 15.0),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: [
+                  Column(
+                    mainAxisSize: MainAxisSize.min,
+                    children: [
+                      ElevatedButton(
+                        style: buttonStyle,
+                        onPressed: () {
+                          _setBody(homePage());
+                        },
+                        child: const Icon(
+                          Icons.home,
+                          size: 25,
+                          color: Color.fromRGBO(19, 49, 92, 1.0),
+                        ),
+                      ),
+                      const Text('Home', style: TextStyle(color: Colors.white)),
+                    ],
+                  ),
+                  Column(
+                    mainAxisSize: MainAxisSize.min,
+                    children: [
+                      ElevatedButton(
+                        style: buttonStyle,
+                        onPressed: () {
+                          _setBody(mousePage());
+                        },
+                        child: const Icon(
+                          Icons.mouse,
+                          size: 25,
+                          color: Color.fromRGBO(19, 49, 92, 1.0),
+                        ),
+                      ),
+                      const Text('Mouse',
+                          style: TextStyle(color: Colors.white)),
+                    ],
+                  ),
+                  Column(
+                    mainAxisSize: MainAxisSize.min,
+                    children: [
+                      ElevatedButton(
+                        style: buttonStyle,
+                        onPressed: () {
+                          _setBody(keyboardPage());
+                        },
+                        child: const Icon(
+                          Icons.keyboard,
+                          size: 25,
+                          color: Color.fromRGBO(19, 49, 92, 1.0),
+                        ),
+                      ),
+                      const Text('Keyboard',
+                          style: TextStyle(color: Colors.white)),
+                    ],
+                  ),
+                  Column(
+                    mainAxisSize: MainAxisSize.min,
+                    children: [
+                      ElevatedButton(
+                        style: buttonStyle,
+                        onPressed: () {
+                          _setBody(headphonePage());
+                        },
+                        child: const Icon(
+                          Icons.headset,
+                          size: 25,
+                          color: Color.fromRGBO(19, 49, 92, 1.0),
+                        ),
+                      ),
+                      const Text('Headphone',
+                          style: TextStyle(color: Colors.white)),
+                    ],
+                  ),
+                ],
               ),
             ),
           ],
         ),
       ),
+      body: _currentBody,
     );
   }
 }
