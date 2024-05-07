@@ -3,7 +3,6 @@ import 'package:flutter_project/components/home.dart';
 import 'package:flutter_project/components/profile.dart';
 import 'package:flutter_project/components/cart.dart';
 import 'package:flutter_project/components/fav.dart';
-import 'package:flutter_project/components/page/mousePage.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({Key? key}) : super(key: key);
@@ -38,16 +37,10 @@ class _HomeScreenState extends State<HomeScreen> {
           style: TextStyle(
               color: Colors.white,
               fontSize: 23,
-              fontWeight: FontWeight.w500,
-          ),
+              fontWeight: FontWeight.w500,          
+          ),          
         ),
-        backgroundColor: const Color.fromRGBO(11, 37, 69, 1.0),
-        leading: IconButton(
-          icon: const Icon(Icons.menu, color: Colors.white),
-          onPressed: () {
-            print('Menu button pressed');
-          },
-        ),
+        backgroundColor: const Color.fromRGBO(11, 37, 69, 1.0),        
       ),
       body: IndexedStack(
         index: _selectedIndex,

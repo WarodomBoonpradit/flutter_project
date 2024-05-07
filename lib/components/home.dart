@@ -65,10 +65,10 @@ class _HomeState extends State<Home> {
               child: CarouselSlider(
                 items: [
                   _buildImageWithStyle(
-                    'https://cdn.discordapp.com/attachments/1215338957923942431/1236622795002220664/logo.png?ex=6639ffb9&is=6638ae39&hm=140b50c521726d9105cefb807cbd40b8e6cc1f35f1f8b16424d67b6350fea551&',
+                    'https://i.postimg.cc/VLFVMfr0/logofinal.png',
                   ),
                   _buildImageWithStyle(
-                    'https://cdn.discordapp.com/attachments/1215338957923942431/1236346595243462797/logo.png?ex=6639a73e&is=663855be&hm=55500d7d689c13766fb0d1e70af1bdadb81946c58c0d2f674a017643034705ba&',
+                    'https://i.postimg.cc/VLFVMfr0/logofinal.png',
                   ),
                 ],
                 options: CarouselOptions(
