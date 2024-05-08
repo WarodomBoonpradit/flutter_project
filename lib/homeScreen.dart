@@ -3,6 +3,7 @@ import 'package:flutter_project/components/home.dart';
 import 'package:flutter_project/components/profile.dart';
 import 'package:flutter_project/components/cart.dart';
 import 'package:flutter_project/components/fav.dart';
+import 'package:flutter_project/components/page/loginPage.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({Key? key}) : super(key: key);
@@ -18,7 +19,7 @@ class _HomeScreenState extends State<HomeScreen> {
     const Home(),
     Fav(),
     const Cart(),
-    const Profile(),
+    LoginPage(),
   ];
 
   void _onItemTapped(int index) {
