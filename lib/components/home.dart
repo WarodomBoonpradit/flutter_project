@@ -13,7 +13,7 @@ class Home extends StatefulWidget {
 }
 
 class _HomeState extends State<Home> {
-  Widget _currentBody = homePage();
+  Widget _currentBody = HomePage();
 
   void _setBody(Widget newBody) {
     setState(() {
@@ -90,7 +90,7 @@ class _HomeState extends State<Home> {
                       ElevatedButton(
                         style: buttonStyle,
                         onPressed: () {
-                          _setBody(homePage());
+                          _setBody(HomePage());
                         },
                         child: const Icon(
                           Icons.home,
@@ -107,7 +107,7 @@ class _HomeState extends State<Home> {
                       ElevatedButton(
                         style: buttonStyle,
                         onPressed: () {
-                          _setBody(mousePage());
+                          _setBody(MousePage());
                         },
                         child: const Icon(
                           Icons.mouse,
